@@ -1,0 +1,11 @@
+class CreateCommets < ActiveRecord::Migration[5.0]
+  def change
+    create_table :commets do |t|
+      t.string :commenter
+      t.text :body
+      t.references :article, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end
